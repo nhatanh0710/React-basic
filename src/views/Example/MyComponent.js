@@ -5,14 +5,25 @@ class MyComponent extends React.Component{
         name: 'Ronaldo',
         channel: 'Hoi Dan It'
     }
+    handleClickButton = () =>{
+        alert('Finish Click Me')
+    }
+    handleOnChangeName =(event) => {
+        this.setState({
+            name: event.target.value
+        })
+    }
     render(){
         return(
             <>
                 <div className="first"> 
-                    Hello MyComponent, My name is {this.state.name}
+                   <input value={this.state.name} type="text" onChange={(event)=> this.handleOnChangeName(event)}></input>
+                    My name is {this.state.name}
                 </div>
                 <div className='second'>Hello Nguyen Truong Nhat Anh</div>
-                
+                <div className='third'>
+                    <button onClick={() => this.handleClickButton()}>Click me</button>
+                </div>
             </>
             
         )
