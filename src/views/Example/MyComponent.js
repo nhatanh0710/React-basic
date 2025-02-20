@@ -1,11 +1,23 @@
-import React from 'react'
+import React from 'react';
 
 class MyComponent extends React.Component{
+    state={
+        name: 'Ronaldo',
+        channel: 'Hoi Dan It'
+    }
     render(){
         return(
-            <div>hello my Component Nguyen Truong Nhat Anh</div>
+            <>
+                <div className="first"> 
+                    Hello MyComponent, My name is {this.state.name}
+                </div>
+                <div className='second'>Hello Nguyen Truong Nhat Anh</div>
+                
+            </>
+            
         )
-    }    
+        
+    }
 }
 
 export default MyComponent;
