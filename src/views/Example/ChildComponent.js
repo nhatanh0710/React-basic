@@ -23,10 +23,15 @@ class ChildComponent extends React.Component{
         alert('Submit finish')
     }
     render(){
+        console.log('>>>check props: ', this.props)
+            let name = this.props.name;
+            let age = this.props.age;
+            // let {name,age} = this.props;
         return(
+            
             <>
                 <div>
-                    ChildComponent: {this.props.name}
+                    ChildComponent: {name} - {age}
                 </div>
             </>
             
