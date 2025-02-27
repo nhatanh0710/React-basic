@@ -5,17 +5,36 @@ import ListTodo from './views/Todos/ListToDo';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { Bounce } from "react-toastify";
+import Nav from './views/Nav/Nav.js';
+import Home from './views/Example/Home.js';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  BrowserRouter
+} from "react-router-dom";
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
+      <Nav></Nav>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Simple TODO Apps with React.js
-        </p>
         
-        {/*<MyComponent/>*/}
-        <ListTodo></ListTodo>
+        <img src={logo} className="App-logo" alt="logo" />
+        <Routes>
+          <Route path="/" element={<Home />} exact>
+            
+          </Route>
+          <Route path="/todos" element={<ListTodo />}>
+           
+          </Route>
+          <Route path="/about" element={<MyComponent />}>
+            
+          </Route>
+        </Routes>
+        
+
       </header>
       <ToastContainer
           position="top-right"
@@ -31,6 +50,7 @@ function App() {
           transition={Bounce}
         />
     </div>
+    </BrowserRouter>
   );
 }
 
