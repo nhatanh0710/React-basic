@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Bounce } from "react-toastify";
 import Nav from './views/Nav/Nav.js';
 import Home from './views/Example/Home.js';
+import ListUser from './Users/ListUser';
 import {
   BrowserRouter as Router,
   Routes,
@@ -30,7 +31,9 @@ function App() {
            
           </Route>
           <Route path="/about" element={<MyComponent />}>
-            
+          <Route path="/user">
+              <ListUser />
+            </Route>
           </Route>
         </Routes>
         
